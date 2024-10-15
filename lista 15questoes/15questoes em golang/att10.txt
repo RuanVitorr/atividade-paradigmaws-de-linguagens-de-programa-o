@@ -1,0 +1,10 @@
+func somar(a int, b int) int {
+    return a + b
+}
+
+func somarComTres(a int, b int, c int) int {
+    return a + b + c
+}
+
+fmt.Println(somar(2, 3))
+fmt.Println(somarComTres(2, 3, 4))

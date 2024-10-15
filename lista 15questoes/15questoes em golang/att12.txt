@@ -1,0 +1,13 @@
+type Produto struct {
+    Nome  string
+    Preco float64
+}
+
+func (p Produto) Somar(outro Produto) Produto {
+    return Produto{Nome: p.Nome + " e " + outro.Nome, Preco: p.Preco + outro.Preco}
+}
+
+produto1 := Produto{Nome: "Produto A", Preco: 50}
+produto2 := Produto{Nome: "Produto B", Preco: 30}
+produto3 := produto1.Somar(produto2)
+fmt.Printf("Nome: %s, Preço: %.2f\n", produto3.Nome, produto3.Preco)

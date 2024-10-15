@@ -1,0 +1,32 @@
+package main
+
+import "fmt"
+
+type Animal struct {
+    nome string
+}
+
+func (a Animal) som() {}
+
+type Cachorro struct {
+    Animal
+}
+
+func (c Cachorro) som() {
+    fmt.Printf("%s faz: Au Au\n", c.nome)
+}
+
+type Gato struct {
+    Animal
+}
+
+func (g Gato) som() {
+    fmt.Printf("%s faz: Miau Miau\n", g.nome)
+}
+
+func main() {
+    cachorro1 := Cachorro{Animal{"Scooby"}}
+    gato1 := Gato{Animal{"Mu"}}
+    cachorro1.som()
+    gato1.som()
+}

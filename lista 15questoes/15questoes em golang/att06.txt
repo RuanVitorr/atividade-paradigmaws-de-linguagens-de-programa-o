@@ -1,0 +1,12 @@
+type Motor struct {
+    Potencia int
+}
+
+type Carro struct {
+    Marca  string
+    Modelo string
+    Motor  Motor
+}
+
+motor1 := Motor{Potencia: 400}
+carro1 := Carro{Marca: "Mitsubishi", Modelo: "Lancer", Motor: motor1}

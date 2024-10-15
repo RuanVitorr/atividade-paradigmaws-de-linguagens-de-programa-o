@@ -1,0 +1,19 @@
+type Imprimivel interface {
+    Imprimir()
+}
+
+type Relatorio struct{}
+type Contrato struct{}
+
+func (r Relatorio) Imprimir() {
+    fmt.Println("Imprimindo Relatório")
+}
+
+func (c Contrato) Imprimir() {
+    fmt.Println("Imprimindo Contrato")
+}
+
+relatorio := Relatorio{}
+contrato := Contrato{}
+relatorio.Imprimir()
+contrato.Imprimir()

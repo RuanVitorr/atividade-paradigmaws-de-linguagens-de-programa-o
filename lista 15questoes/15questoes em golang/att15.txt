@@ -1,0 +1,28 @@
+package main
+
+import "fmt"
+
+type SaldoInsuficienteError struct {
+    message string
+}
+
+func (e *SaldoInsuficienteError) Error() string {
+    return e.message
+}
+
+type ContaBancaria struct {
+    saldo float64
+}
+
+func (c *ContaBancaria) Sacar(valor float64) error {
+    if valor > c.saldo {
+        return &SaldoInsuficienteError{"Saldo insuficiente!"}
+    }
+    c.saldo -= valor
+    return nil
+}
+
+conta := ContaBancaria{saldo: 100}
+if err := conta.Sacar(150); err != nil {
+    fmt.Println(err)
+}
